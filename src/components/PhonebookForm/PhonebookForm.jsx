@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import css from './PhonebookForm.module.css';
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/actions';
 
-export default function PhonebookForm({ onAddContact }) {
+export default function PhonebookForm() {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -31,7 +33,7 @@ export default function PhonebookForm({ onAddContact }) {
       name,
       number,
     };
-    onAddContact(contact, name);
+    dispatch(addContact(contact));
     setName('');
     setNumber('');
   };
@@ -68,7 +70,3 @@ export default function PhonebookForm({ onAddContact }) {
     </form>
   );
 }
-
-PhonebookForm.propTypes = {
-  onAddContact: PropTypes.func.isRequired,
-};
