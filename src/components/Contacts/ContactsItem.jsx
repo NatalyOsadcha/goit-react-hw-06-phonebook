@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactsItem.module.css';
 import TextField from '@mui/material/TextField';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/actions';
 
-const ContactsItem = ({ contact, onDeleteContact, editContact }) => {
+const ContactsItem = ({contact}) => {
+    const dispatch = useDispatch();
   const [isEdit, setIsEdit] = useState(false);
   const [name, setName] = useState(contact.name);
   const [number, setNumber] = useState(contact.number);
 
   const handleEdit = () => {
     setIsEdit(prevState => !prevState);
-    if (isEdit) {
-      editContact({ name, number, id: contact.id });
-    }
+    // if (isEdit) {
+    //   editContact({ name, number, id: contact.id });
+    // }
   };
 
   return (
@@ -48,7 +51,7 @@ const ContactsItem = ({ contact, onDeleteContact, editContact }) => {
       <button
         type="button"
         className={css.contactsBtn}
-        onClick={() => onDeleteContact(contact.id)}
+        onClick={() => dispatch(deleteContact(contact.id))}
       >
         Detele
       </button>
