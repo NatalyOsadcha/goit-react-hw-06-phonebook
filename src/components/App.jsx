@@ -14,12 +14,6 @@ export default function App() {
   //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
   // }, [contacts]);
 
-  // const getFilteredContacts = () => {
-  //   return contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase().trim())
-  //   );
-  // };
-
   // const editContact = contact => {
   //   setContacts(prevContacts =>
   //     prevContacts.map(el => {
@@ -30,7 +24,7 @@ export default function App() {
   //     })
   //   );
   // };
-  // const filteredContacts = getFilteredContacts();
+
 
   return (
     <>
