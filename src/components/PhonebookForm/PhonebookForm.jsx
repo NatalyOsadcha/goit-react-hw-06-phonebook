@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import css from './PhonebookForm.module.css';
 import { nanoid } from 'nanoid';
-import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/actions';
+import { useDispatch} from 'react-redux';
+import { addContact} from 'redux/contactsSlice';
 
 export default function PhonebookForm() {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export default function PhonebookForm() {
         return;
     }
   };
-
+  
   const handleSubmit = e => {
     e.preventDefault();
     const contact = {

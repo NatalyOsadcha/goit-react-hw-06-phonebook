@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import css from './ContactsItem.module.css';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/actions';
+import { deleteContact } from 'redux/contactsSlice';
 
 const ContactsItem = ({contact}) => {
     const dispatch = useDispatch();

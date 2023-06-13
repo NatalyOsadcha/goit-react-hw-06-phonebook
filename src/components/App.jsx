@@ -10,21 +10,15 @@ export default function App() {
   //   () => JSON.parse(localStorage.getItem('contacts')) ?? []
   // );
 
-
   // useEffect(() => {
   //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
   // }, [contacts]);
-
-
- 
 
   // const getFilteredContacts = () => {
   //   return contacts.filter(contact =>
   //     contact.name.toLowerCase().includes(filter.toLowerCase().trim())
   //   );
   // };
-
-
 
   // const editContact = contact => {
   //   setContacts(prevContacts =>
@@ -44,11 +38,7 @@ export default function App() {
       <PhonebookForm/>
       <h2>Contacts</h2>
       <Filter />
-      <Contacts
-        // contacts={filteredContacts}
-        // onDeleteContact={deleteContact}
-        // editContact={editContact}
-      />
+      <Contacts/>
       <ToastContainer autoClose={2000} />
     </>
   );
