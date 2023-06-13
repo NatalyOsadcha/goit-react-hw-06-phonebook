@@ -6,7 +6,7 @@ import { contactsSelector, filterSelector } from 'redux/selectors';
 
 const Contacts = () => {
   const filterValue = useSelector(filterSelector);
-  const { contacts } = useSelector(contactsSelector);
+  const contacts = useSelector(contactsSelector);
 
   const getFilteredContacts = () => {
     return contacts.filter(contact =>
