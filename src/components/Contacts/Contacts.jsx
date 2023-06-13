@@ -7,16 +7,17 @@ import { contactsSelector, filterSelector } from 'redux/selectors';
 // import { getFilteredContacts } from 'redux/contactsSlice';
 
 const Contacts = () => {
-  // const { filter } = useSelector(filterSelector);
+  const { filterCont } = useSelector(filterSelector);
   console.log(useSelector(filterSelector));
 
   const { contacts } = useSelector(contactsSelector)
   console.log(contacts)
 
   const getFilteredContacts = () => {
-    // return contacts.filter(contact =>
-    //   contact.name.toLowerCase().includes(filter.toLowerCase().trim())
-    // );
+    return contacts.filter(contact =>
+    console.log(filterCont)
+      // contact.name.toLowerCase().includes(filter.toLowerCase().trim())
+    );
   };
   const filteredContacts = getFilteredContacts();
   return <ul className={css.contactsList}>
