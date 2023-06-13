@@ -13,12 +13,10 @@ const Contacts = () => {
   const { contacts } = useSelector(contactsSelector)
   console.log(contacts)
 
-  const getFilteredContacts = (state) => {
-    console.log(state)
-    const g = state.filter.value
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(g.toLowerCase().trim())
-    );
+  const getFilteredContacts = () => {
+    // return contacts.filter(contact =>
+    //   contact.name.toLowerCase().includes(filter.toLowerCase().trim())
+    // );
   };
   const filteredContacts = getFilteredContacts();
   return <ul className={css.contactsList}>
